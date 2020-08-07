@@ -20,17 +20,18 @@ img_path = 'data/lena.png'
 img = cv2.imread(img_path, cv2.IMREAD_COLOR)
 
 #如果只要只有某一channel，其他channel要設為0
-r=img.copy()
-r[:,:,1]=0
-r[:,:,2]=0
+#[:,:,012]=[width,height ,bgr]
+b=img.copy()
+b[:,:,1]=0 #代表紅色通道[1]，長寬像素都為0
+b[:,:,2]=0
 
 g=img.copy()
 g[:,:,0]=0
 g[:,:,2]=0
 
-b=img.copy()
-b[:,:,0]=0
-b[:,:,1]=0
+r=img.copy()
+r[:,:,0]=0
+r[:,:,1]=0
 
 # 為了要不斷顯示圖片，所以使用一個迴圈(按叉叉關不掉的意思)
 while True:
