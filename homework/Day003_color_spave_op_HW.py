@@ -79,8 +79,8 @@ equalHist_by_channel = [cv2.equalizeHist(i) for i in equalHist_by_channel]
 
 #組合經過直方圖均衡的每個 channel
 #hstack為水平(列)拼接
-#stack為channel疊起來，要注意channel數(channel=3就是axis=2)
-img_bgr_equal = np.stack(equalHist_by_channel, axis=-1) #，axis代表增加第三維度(axis=2)
+
+img_bgr_equal = np.stack(equalHist_by_channel, axis=-1) #axis代表增加第三維度(axis=2)
 
 # case 2 - 轉換 color space 後只對其中一個 channel 做直方圖均衡(HSV處理完要轉回BGR)
 img_hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
